@@ -1,11 +1,11 @@
 package test;
 
 import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.Assertions;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
+
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -17,7 +17,7 @@ public class AutomationFormTest {
     static void beforeAll() {
         Configuration.browserSize = "1920x800";
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.pageLoadStrategy = "normal";
+
     }
     @Test
     void FillFormTest() {
@@ -30,7 +30,7 @@ public class AutomationFormTest {
         $("#firstName").setValue("Hello");
         $("#lastName").setValue("World");
         $("#userEmail").setValue("helloworld@email.com");
-        $("#gender-radio-3").parent().click();
+        $("#genterWrapper").$(byText("Other")).click();
         $("#userNumber").setValue("0011223344");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("December");
@@ -38,7 +38,7 @@ public class AutomationFormTest {
         $(".react-datepicker__day--010").click();
         $("#subjectsInput").setValue("English").pressEnter();
         $("#hobbiesWrapper").$(byText("Reading")).click();
-        $("#uploadPicture").uploadFile(new File("src/test/resources/img/image.png"));
+        $("#uploadPicture").uploadFromClasspath("image.png");
         $("#currentAddress").setValue("Test Address Placed Here");
         $("#state").click();
         $("#stateCity-wrapper").$(byText("NCR")).click();
