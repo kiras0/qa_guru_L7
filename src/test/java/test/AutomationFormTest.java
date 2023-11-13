@@ -20,7 +20,7 @@ public class AutomationFormTest {
 
     }
     @Test
-    void FillFormTest() {
+    void fillFormTest() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
 
