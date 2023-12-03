@@ -61,7 +61,17 @@ public class FormTestPageObjects extends BaseTest {
                 .checkResult("Mobile", "0123456789")
                 .checkResult("Date of Birth", "10" + " " + "December" + "," + "1990");
     }
-
+    @Test
+    void unfilledFillFormTest() {
+        formTestPage.openPage()
+                .closeBanner()
+                .setFirstName("Hello")
+                .setUserEmail("helloworld@email.com")
+                .setGender("Other")
+                .setUserNumber("0123456789")
+                .pressSubmit();
+        tableComponent.checkResultElement("Practice Form");
+    }
 
 }
 
