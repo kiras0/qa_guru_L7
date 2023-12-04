@@ -25,7 +25,7 @@ public class FormTestPageObjects extends BaseTest {
                 .setDateOfBirth("December","1990","10")
                 .setSubjects("English")
                 .setHobbies("Reading")
-                .setPicture("image.png")
+                .setPicture()
                 .setAddress("Test Address Placed Here")
                 .setState("NCR")
                 .setCity("Delhi")

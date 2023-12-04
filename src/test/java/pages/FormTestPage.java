@@ -2,7 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import pages.component.CalendarComponent;
-
+import utils.RandomUtils;
 
 
 import static com.codeborne.selenide.Condition.text;
@@ -11,6 +11,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class FormTestPage {
+    RandomUtils randomUtils = new RandomUtils();
     private SelenideElement firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
@@ -88,8 +89,8 @@ public class FormTestPage {
 
         return this;
     }
-    public FormTestPage setPicture(String filename) {
-        pictureInput.uploadFromClasspath(filename);
+    public FormTestPage setPicture() {
+        pictureInput.uploadFromClasspath(randomUtils.picture);
 
         return this;
     }
